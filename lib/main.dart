@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:carousel_widget/carousel_widget.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -7,14 +8,13 @@ void main() {
   ));
 }
 
-class Buttons extends StatelessWidget{
+class Buttons extends StatelessWidget {
   final text;
   final color;
-  Buttons (this.text, this.color);
+  Buttons(this.text, this.color);
 
   @override
-  Widget build(BuildContext context){
-
+  Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(left: 2.0),
       padding: EdgeInsets.all(1.0),
@@ -23,30 +23,28 @@ class Buttons extends StatelessWidget{
         color: color,
         elevation: 2.0,
         textColor: Colors.white,
-        onPressed: (){
-        },
+        onPressed: () {},
         child: Text(text),
-        ),
-      );
+      ),
+    );
   }
 }
 
-
-class NavigationMenu extends StatelessWidget{
+class NavigationMenu extends StatelessWidget {
   @override
-
-  Widget build(BuildContext context){
-
+  Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-      Buttons('Clothes', Colors.green),
-      Buttons('Electronics', Colors.green),
-      Buttons('Computers', Colors.green),
-      Buttons('Services', Colors.green),
-    ],);
+        Buttons('Clothes', Colors.green),
+        Buttons('Electronics', Colors.green),
+        Buttons('Computers', Colors.green),
+        Buttons('Services', Colors.green),
+      ],
+    );
   }
 }
+
 AppBar appBar = AppBar(
   backgroundColor: Colors.white,
   leading: Container(
@@ -85,25 +83,75 @@ TextField textField = TextField(
 class SearchBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return  Row(
-          mainAxisAlignment:MainAxisAlignment.spaceEvenly,
-          children: <Widget>[
-            Container(
-              padding: EdgeInsets.only(
-                left: 20.0,
-                top: 10.0,
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: <Widget>[
+        Container(
+          padding: EdgeInsets.only(
+            left: 20.0,
+            top: 10.0,
+          ),
+          width: 350.0,
+          child: textField,
+        ),
+        IconButton(
+          onPressed: null,
+          icon: Icon(Icons.search),
+          color: Colors.white30,
+          padding: EdgeInsets.all(10.0),
+        ),
+      ],
+    );
+  }
+}
+
+class PopUp extends StatelessWidget{
+@override
+Widget build(BuildContext context){
+  return  Card(
+      child: ListTile(
+                title: Row(
+                  children: <Widget>[
+                    Text('Kunle Shop'),
+                ],
+                ),
+                subtitle: Text('21, Olusegun street'),
               ),
-              width: 350.0,
-              child: textField,
+          //     Icon(Icons.arrow_forward, color: Colors.black,)
+          //   ],
+          // ),
+          // Row(
+          //   children: <Widget>[
+          //     ListTile(
+          //       title: Icon(
+          //        Icons.videocam,
+          //        size: 2.0,
+          //        color: Colors.transparent,
+          //       ),
+          //       subtitle: Text('Watch Video'),
+          //     ),
+          //     Buttons('SHOP LIVE', Colors.greenAccent),
+    );
+  }
+}
+
+class CarouselList extends StatelessWidget {
+  @override
+  Widget build(BuildContext context){
+    return Container(
+      height: 200.0,
+      width: 300.0,
+      child: Carousel(
+              listViews: [
+                Fragment(
+                  child:PopUp(),
+                  ),
+                Fragment(
+                  child:  PopUp(),
+                  ),
+              ],
             ),
-            IconButton(
-              onPressed: null,
-              icon: Icon(Icons.search),
-              color: Colors.white30,
-              padding: EdgeInsets.all(10.0),
-            ),
-          ],
-        );
+      );
   }
 }
 
@@ -121,11 +169,15 @@ class TutorialHome extends StatelessWidget {
       // Scaffold is a layout for the major Material Components.
       home: Scaffold(
         appBar: appBar,
-        body: Column(children: <Widget>[
+        body: Column(
+          children: <Widget>[
             SizedBox(height: 5.0),
             SearchBox(),
-            SizedBox(height: 8.0,),
+            SizedBox(
+              height: 8.0,
+            ),
             NavigationMenu(),
+            CarouselList(),
           ],
         ),
         floatingActionButton: floatingActionButton,
