@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:carousel_widget/carousel_widget.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -120,7 +120,12 @@ class PopUp extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                Text(name),
+                Text(name,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
                 IconButton(
                   icon: Icon(Icons.headset),
                   onPressed: () {},
@@ -139,7 +144,7 @@ class PopUp extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 10.0,),
+            SizedBox(height: 20.0,),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
@@ -158,11 +163,13 @@ class PopUp extends StatelessWidget {
                   ],
                 ),
                 RaisedButton(
+                  padding: EdgeInsets.only(left: 20, right: 20, top: 10, bottom: 10),
                   color: Colors.green,
                   onPressed: (){},
                   child: Text('Shop Live',
                     style: TextStyle(
                       color: Colors.white,
+                      fontSize: 18.0,
                     ),
                   ),
                 )
@@ -175,22 +182,30 @@ class PopUp extends StatelessWidget {
   }
 }
 
-class CarouselList extends StatelessWidget {
+
+class Carrousel extends StatefulWidget{
   @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 200.0,
-      width: 300.0,
-      child: Carousel(
-        listViews: [
-          Fragment(
-            child: PopUp('Jigga Shop','5 Olusegun street'),
-          ),
-          Fragment(
-            child: PopUp('Olumide shop', '21 Olusegun street'),
-          ),
-        ],
-      ),
+  _CarrouselState createState()=> _CarrouselState();
+}
+
+class _CarrouselState extends State <Carrousel>{
+  @override
+  Widget build(BuildContext context){
+    return CarouselSlider(
+      height: 200,
+      items: <Widget>[
+        PopUp('New Age Saloon','4534 Lakeshore drive'),
+        PopUp('Magnificent looks','7, Thors Brine'),
+        PopUp('Gregs Beef','Old Guards Boulevard'),
+        PopUp('Jennys Shop','Allington Avenue')
+      ],
+      autoPlay: false,
+      enableInfiniteScroll: false,
+      onPageChanged: (index) {
+         setState(() {
+          }
+        );
+      },
     );
   }
 }
@@ -217,10 +232,10 @@ class TutorialHome extends StatelessWidget {
               height: 8.0,
             ),
             NavigationMenu(),
-            CarouselList(),
+            SizedBox(height: 5.0,),
+            Carrousel(), 
           ],
         ),
-        floatingActionButton: floatingActionButton,
       ),
     );
   }
