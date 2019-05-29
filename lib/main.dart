@@ -105,53 +105,93 @@ class SearchBox extends StatelessWidget {
   }
 }
 
-class PopUp extends StatelessWidget{
-@override
-Widget build(BuildContext context){
-  return  Card(
+class PopUp extends StatelessWidget {
+  final name;
+  final address;
+
+  PopUp(this.name, this.address); //Pop Up constructor
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
       child: ListTile(
-                title: Row(
-                  children: <Widget>[
-                    Text('Kunle Shop'),
-                ],
+        title: Column(
+          children: <Widget>[
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Text(name),
+                IconButton(
+                  icon: Icon(Icons.headset),
+                  onPressed: () {},
+                  color: Colors.red,
+                )
+              ],
+            ),
+            Row(
+              children: <Widget>[
+                Text(address,
+                  style: TextStyle(
+                      color: Colors.grey, 
+                      fontStyle: FontStyle.italic,
+                      fontSize: 12.0
+                  ),
                 ),
-                subtitle: Text('21, Olusegun street'),
-              ),
-          //     Icon(Icons.arrow_forward, color: Colors.black,)
-          //   ],
-          // ),
-          // Row(
-          //   children: <Widget>[
-          //     ListTile(
-          //       title: Icon(
-          //        Icons.videocam,
-          //        size: 2.0,
-          //        color: Colors.transparent,
-          //       ),
-          //       subtitle: Text('Watch Video'),
-          //     ),
-          //     Buttons('SHOP LIVE', Colors.greenAccent),
+              ],
+            ),
+            SizedBox(height: 10.0,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Column(children: <Widget>[
+                    Icon(
+                      Icons.videocam,
+                      color: Colors.black,
+                      size: 40.0,
+                    ),
+                    Text('Live Stream', 
+                      style: TextStyle(
+                        fontSize: 14.0,
+                        fontWeight: FontWeight.w600,
+                     ),
+                    ),
+                  ],
+                ),
+                RaisedButton(
+                  color: Colors.green,
+                  onPressed: (){},
+                  child: Text('Shop Live',
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
+                )
+              ],
+            )
+          ],
+        ),
+      )
     );
   }
 }
 
 class CarouselList extends StatelessWidget {
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Container(
       height: 200.0,
       width: 300.0,
       child: Carousel(
-              listViews: [
-                Fragment(
-                  child:PopUp(),
-                  ),
-                Fragment(
-                  child:  PopUp(),
-                  ),
-              ],
-            ),
-      );
+        listViews: [
+          Fragment(
+            child: PopUp('Jigga Shop','5 Olusegun street'),
+          ),
+          Fragment(
+            child: PopUp('Olumide shop', '21 Olusegun street'),
+          ),
+        ],
+      ),
+    );
   }
 }
 
