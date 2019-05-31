@@ -144,7 +144,7 @@ class PopUp extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 20.0,),
+            SizedBox(height: 50.0,),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
@@ -163,13 +163,13 @@ class PopUp extends StatelessWidget {
                   ],
                 ),
                 RaisedButton(
-                  padding: EdgeInsets.only(left: 20, right: 20, top: 10, bottom: 10),
+                  padding: EdgeInsets.only(left: 20, right: 20, top: 15, bottom: 15),
                   color: Colors.green,
                   onPressed: (){},
                   child: Text('Shop Live',
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 18.0,
+                      fontSize: 20.0,
                     ),
                   ),
                 )
