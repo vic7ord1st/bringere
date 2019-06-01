@@ -1,4 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_database/firebase_database.dart';
+
+final databaseReference = FirebaseDatabase.instance.reference().child('1').child('1');
+
+void getData() {
+  databaseReference.once().then((DataSnapshot snapshot) {
+
+    var _snapShot = snapshot.value;
+
+    print('Data : $_snapShot');
+  });
+}
 
 TextField textField = TextField(
   style: TextStyle(
@@ -27,8 +39,13 @@ class SearchBox extends StatelessWidget {
           child: textField,
         ),
         IconButton(
-          onPressed: null,
-          icon: Icon(Icons.search),
+          onPressed: () {
+            getData();
+          },
+          icon: Icon(
+            Icons.search,
+            color: Colors.black,
+          ),
           color: Colors.white30,
           padding: EdgeInsets.all(10.0),
         ),
