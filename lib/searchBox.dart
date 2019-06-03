@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
 
-final databaseReference = FirebaseDatabase.instance.reference().child('1').child('1');
+final databaseReference = FirebaseDatabase.instance.reference().child('1');
 
 void getData() {
   databaseReference.once().then((DataSnapshot snapshot) {
