@@ -23,6 +23,7 @@ dependencies:
   carousel_widget:
   carousel_slider:
   firebase_database:
+  google_maps_flutter:
 
 dev_dependencies:
   flutter_test:

@@ -2,20 +2,21 @@ import 'package:flutter/material.dart';
 
 class Buttons extends StatelessWidget {
   final text;
-  final color;
-  Buttons(this.text, this.color);
-
+  final _color;
+  Buttons(this.text, this._color);
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(left: 2.0),
       padding: EdgeInsets.all(1.0),
       alignment: Alignment.center,
-      child: new RaisedButton(
-        color: color,
+      child: new RaisedButton(animationDuration: Duration(seconds: 2),
+        color: _color,
         elevation: 2.0,
         textColor: Colors.white,
-        onPressed: () {},
+        onPressed: () {
+         
+        },
         child: Text(text),
       ),
     );
