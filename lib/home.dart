@@ -22,7 +22,6 @@ class _HomeState extends State <Home> {
       home: Scaffold(
         appBar: appBar,
         body: Column(
-          mainAxisSize: MainAxisSize.max,
           children: <Widget>[
             SizedBox(height: 5.0),
             SearchBox(),
@@ -30,12 +29,14 @@ class _HomeState extends State <Home> {
             NavigationMenu(),
             SizedBox(height: 5.0,),
             Container(
-              alignment: Alignment.center,
+              height: 475,
               margin: EdgeInsets.all(0),
               child: 
               Stack(children: <Widget>[
                  Map(),
-                 Carrousel(),
+                 Container(
+                     child: Carrousel(),
+                   )
               ],
             ) ,
            )

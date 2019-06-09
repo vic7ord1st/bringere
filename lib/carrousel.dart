@@ -7,7 +7,8 @@ class Carrousel extends StatelessWidget{
   @override
   
   Widget build(BuildContext context){
-    return Align(
+    return 
+      Container(
       alignment: Alignment.bottomRight,
       child: StatefulBuilder(
        builder: (ctx, StateSetter setState) => 

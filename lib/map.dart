@@ -11,8 +11,10 @@ class _MapState extends State <Map> {
 
   Widget build(BuildContext context){
     return
-    GoogleMap(
-      initialCameraPosition: CameraPosition(target: LatLng(63.91, -145.25 ), zoom: 14),
-    );
+      Container(
+          child: GoogleMap(
+          initialCameraPosition: CameraPosition(target: LatLng(63.91, -145.25 ), zoom: 14),
+        ),
+      );
   }
 }
