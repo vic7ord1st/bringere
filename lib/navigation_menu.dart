@@ -26,14 +26,17 @@ class Buttons extends StatelessWidget {
 class NavigationMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        Buttons('Clothes', Colors.green),
-        Buttons('Electronics', Colors.green),
-        Buttons('Computers', Colors.green),
-        Buttons('Services', Colors.green),
-      ],
+    return Container(
+      margin: EdgeInsets.only(left: 5, right: 5),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Buttons('Clothes', Colors.green),
+          Buttons('Electronics', Colors.green),
+          Buttons('Computers', Colors.green),
+          Buttons('Services', Colors.green),
+        ],
+      )
     );
   }
 }

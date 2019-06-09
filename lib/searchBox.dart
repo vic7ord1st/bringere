@@ -6,7 +6,7 @@ final databaseReference = FirebaseDatabase.instance.reference().child('1');
 void getData() {
   databaseReference.once().then((DataSnapshot snapshot) {
 
-    var _snapShot = snapshot.value;
+    var _snapShot = snapshot;
 
     print('Data : $_snapShot');
   });

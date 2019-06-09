@@ -1,10 +1,11 @@
 
 import 'package:flutter/material.dart';
 import 'navigation_menu.dart';
-import 'appBar.dart';
 import 'carrousel.dart';
 import 'searchBox.dart';
 import 'map.dart';
+import 'drawer.dart';
+
 
 class Home extends StatefulWidget{
   @override
@@ -12,6 +13,9 @@ class Home extends StatefulWidget{
 }
 
 class _HomeState extends State <Home> {
+final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+
+  
   @override
 
   Widget build(BuildContext context){
@@ -20,7 +24,30 @@ class _HomeState extends State <Home> {
       title: 'Bringere',
       // Scaffold is a layout for the major Material Components.
       home: Scaffold(
-        appBar: appBar,
+        key: _scaffoldKey,
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+          leading: Container(
+            margin: EdgeInsets.all(10.0),
+            child: Image.asset(
+              'assets/logo.png',
+              height: 40.0,
+              width: 40.0,
+            ),
+          ),
+          title: Text(''),
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(
+                Icons.menu,
+                color: Colors.green,
+              ),
+              tooltip: 'menu',
+              onPressed: () => _scaffoldKey.currentState.openDrawer(),
+            ),
+          ],
+        ),
+        drawer: Drawr(),
         body: Column(
           children: <Widget>[
             SizedBox(height: 5.0),
