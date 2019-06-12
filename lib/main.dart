@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'home.dart';
+// import 'screens/home.dart';
+import 'screens/loginPage.dart';
 
 void main() async {
   runApp(MaterialApp(
     title: 'Flutter Tutorial',
-    home:  Home(),
+    home:  Login(),
   ));
 }
