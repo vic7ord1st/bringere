@@ -43,7 +43,7 @@ class _RegistrationState extends State<Registration> {
             child: ListView(scrollDirection: Axis.vertical,
               children: <Widget>[
                 SizedBox(
-                  height: 40,
+                  height: 10,
                 ),
                 fieldSetter('Store Name', false),
                 SizedBox(
