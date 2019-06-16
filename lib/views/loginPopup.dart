@@ -77,7 +77,9 @@ TextField fieldSetter(String hintText, bool obscureText){
         fontSize: 16,
       ),
       decoration: InputDecoration(
+        border: OutlineInputBorder(borderSide: BorderSide(color: Colors.grey[100])),
         hintText: hintText,
+        labelText: hintText,
       )
     );     
  }
