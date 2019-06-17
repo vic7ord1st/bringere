@@ -13,7 +13,11 @@ AppBar appBar(String title) {
         width: 40.0,
       ),
     ),
-    title: Text('$title'),
+    title: Padding(
+      padding: EdgeInsets.only(left: 50),
+      child: Text('$title', style: TextStyle(color: Colors.black)
+    ),
+    ),
     actions: <Widget>[
       PopupMenuButton(
         icon: Icon(
