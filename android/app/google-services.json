@@ -1,27 +1,27 @@
 {
   "project_info": {
-    "project_number": "[PROJECT NUMBER",
-    "firebase_url": "[FIREBASE URL]",
-    "project_id": "[PROJECT ID]",
-    "storage_bucket": "[STORAGE BUCKET]"
+    "project_number": "992901502166",
+    "firebase_url": "https://bringere-1547546709198.firebaseio.com",
+    "project_id": "bringere-1547546709198",
+    "storage_bucket": "bringere-1547546709198.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "[MOBILESDK APP ID]",
+        "mobilesdk_app_id": "1:992901502166:android:9854dc104b6be941",
         "android_client_info": {
           "package_name": "com.example.test_flutter"
         }
       },
       "oauth_client": [
         {
-          "client_id": "[CLIENT ID]",
+          "client_id": "992901502166-jk1g8k55jcqs86m308l9omu0l5m42j2a.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "[API KEY]"}
+          "current_key": "AIzaSyB5qhGE0b7cOlwbdOZ17SLNvpZvE-HkqfU"}
       ],
       "services": {
         "appinvite_service": {

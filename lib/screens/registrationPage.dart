@@ -1,6 +1,8 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import '../views/appBar.dart';
 import '../views/loginPopup.dart';
+import '../views/registration_card.dart';
 
 class Registration extends StatefulWidget {
   @override
@@ -39,10 +41,9 @@ class _RegistrationState extends State<Registration> {
               ),
             ),
             Container(
-              margin: EdgeInsets.all(0),
-              padding: EdgeInsets.only(left: 20, right: 20),
-              child: _isTitle ? listView: null
-            ),
+                margin: EdgeInsets.all(0),
+                padding: EdgeInsets.only(left: 20, right: 20),
+                child: sort()),
           ],
         ),
       ),
@@ -53,11 +54,11 @@ class _RegistrationState extends State<Registration> {
     switch (i) {
       case 1:
         {
-          setState((){
-          _isTitle = !_isTitle;
-          _isVideocam = false;
-          _isDashBoard = false;
-          _isPayment = false;
+          setState(() {
+            _isTitle = !_isTitle;
+            _isVideocam = false;
+            _isDashBoard = false;
+            _isPayment = false;
           });
         }
         break;
@@ -105,44 +106,68 @@ class _RegistrationState extends State<Registration> {
   }
 
   var listView = ListView(
-                controller: ScrollController(
-                    keepScrollOffset: true, initialScrollOffset: 1),
-                scrollDirection: Axis.vertical,
-                shrinkWrap: true,
-                children: <Widget>[
-                  SizedBox(
-                    height: 10,
-                  ),
-                  fieldSetter('Store Name', false),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  fieldSetter('Address', false),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  fieldSetter('Password', true),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Container(
-                    child: RaisedButton(
-                      elevation: 2,
-                      color: Colors.green,
-                      animationDuration: Duration(seconds: 1),
-                      child: Container(
-                          padding: EdgeInsets.only(
-                              left: 120, right: 120, top: 10, bottom: 10),
-                          child: Text(
-                            'Log in',
-                            style: TextStyle(
-                              fontSize: 18,
-                              color: Colors.white,
-                            ),
-                          )),
-                      onPressed: () {}, // Define function later
-                    ),
-                  )
-                ],
-              );
+    controller:
+        ScrollController(keepScrollOffset: true, initialScrollOffset: 1),
+    scrollDirection: Axis.vertical,
+    shrinkWrap: true,
+    children: <Widget>[
+      SizedBox(
+        height: 10,
+      ),
+      fieldSetter('Store Name', false),
+      SizedBox(
+        height: 10,
+      ),
+      fieldSetter('Address', false),
+      SizedBox(
+        height: 10,
+      ),
+      fieldSetter('Password', true),
+      SizedBox(
+        height: 10,
+      ),
+      Container(
+        child: RaisedButton(
+          elevation: 2,
+          color: Colors.green,
+          animationDuration: Duration(seconds: 1),
+          child: Container(
+              padding:
+                  EdgeInsets.only(left: 120, right: 120, top: 10, bottom: 10),
+              child: Text(
+                'Log in',
+                style: TextStyle(
+                  fontSize: 18,
+                  color: Colors.white,
+                ),
+              )),
+          onPressed: () {}, // Define function later
+        ),
+      )
+    ],
+  );
+
+  var carrousel = Container(
+    alignment: Alignment.topCenter,
+    child: StatefulBuilder(
+      builder: (context, StateSetter setState) => CarouselSlider(
+        height: 300,
+        items: <Widget>[
+          card,
+          card,
+          card
+      ],
+      )
+    ),
+  );
+
+ Widget sort(){
+   if(_isTitle){
+     return listView;
+   }
+   else if(_isPayment){
+     return carrousel;
+   }
+   else return null;
+ }
 }
