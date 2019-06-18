@@ -9,8 +9,7 @@ List<String> pro = [
 ];
 
 var card = Container(
-  child: Card(
-    elevation: 2,
+  height: 300,
     child: Column(
       children: <Widget>[
         Container(
@@ -28,20 +27,19 @@ var card = Container(
             ),
           ),
         ),
-        ListView.builder(
-          itemBuilder: _buildListItem,
-          itemCount: light.length,
-        ),
+        // ListView.builder(
+        //   itemBuilder: _buildListItem,
+        //   itemCount: light.length,
+        // ),
       ],
     ),
-  ),
 );
 
-Widget _buildListItem(BuildContext context, int index) {
-  return Row(
-    children: <Widget>[
-      Text(light[index],
-          style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600))
-    ],
-  );
-}
+// Widget _buildListItem(BuildContext context, int index) {
+//   return Row(
+//     children: <Widget>[
+//       Text(light[index],
+//           style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600))
+//     ],
+//   );
+// }

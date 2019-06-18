@@ -1,8 +1,8 @@
-import 'package:carousel_slider/carousel_slider.dart';
+// import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import '../views/appBar.dart';
 import '../views/loginPopup.dart';
-import '../views/registration_card.dart';
+// import '../views/registration_card.dart';
 
 class Registration extends StatefulWidget {
   @override
@@ -147,18 +147,24 @@ class _RegistrationState extends State<Registration> {
     ],
   );
 
-  var carrousel = Container(
-    alignment: Alignment.topCenter,
-    child: StatefulBuilder(
-      builder: (context, StateSetter setState) => CarouselSlider(
-        height: 300,
-        items: <Widget>[
-          card,
-          card,
-          card
-      ],
-      )
-    ),
+  var carrousel = ListView(
+    shrinkWrap: true,
+    children: <Widget>[
+    SizedBox(height: 20,),
+    Container(
+      height: 200,
+      child:  Text("We the best", style: TextStyle(fontSize: 12),))
+  ],
+    
+   
+    // child: StatefulBuilder(
+    //   builder: (context, StateSetter setState) => CarouselSlider(
+    //     height: 250,
+    //     items: <Widget>[
+    //       card,
+    //   ],
+    //   )
+    // ),
   );
 
  Widget sort(){
