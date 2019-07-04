@@ -1,45 +1,121 @@
 import 'package:flutter/material.dart';
 
-List<String> light = ["up to 500MB/ 500G", "Banner Ads", " Advance Stats"];
-List<String> plus = ["$light", "Marketing tools", "private link sharing"];
-List<String> pro = [
-  "$plus",
-  "More private link sharing",
-  "More Private matters"
-];
-
-var card = Container(
-  height: 300,
-    child: Column(
-      children: <Widget>[
-        Container(
-          color: Colors.grey[300],
-          margin: EdgeInsets.only(
-            left: 0,
-            right: 0,
-            top: 0,
-          ),
-          child: Text(
-            "LIGHT",
-            style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.w600,
+class RegistrationCard extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      margin: EdgeInsets.only(right: 60, left: 60, top: 40, bottom: 40),
+      child: Container(
+        child: Column(
+          children: <Widget>[
+            Container(
+              alignment: Alignment.center,
+              child: Text(
+                'LIGHT',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 18,
+                ),
+              ),
+              color: Colors.grey[400],
+              margin: EdgeInsets.only(bottom: 20),
+              padding:
+                  EdgeInsets.only(left: 20, right: 20, top: 20, bottom: 20),
             ),
-          ),
+            Container(
+              child: Text(
+                '500mb images and 5G for Videos',
+                style: TextStyle(
+                  color: Colors.grey[400],
+                  fontSize: 14,
+                ),
+              ),
+              padding: EdgeInsets.only(right: 20, left: 20, top: 20),
+              alignment: Alignment.center,
+            ),
+            Container(
+              margin: EdgeInsets.only(right: 60, left: 60, top: 20),
+              child: Divider(height: 2, color: Colors.grey[400]),
+            ),
+            Container(
+              child: Text(
+                'Banner Ads',
+                style: TextStyle(
+                  color: Colors.grey[400],
+                  fontSize: 14,
+                ),
+              ),
+              padding: EdgeInsets.only(right: 20, left: 20, top: 20),
+              alignment: Alignment.center,
+            ),
+            Container(
+              margin: EdgeInsets.only(right: 60, left: 60, top: 20),
+              child: Divider(height: 2, color: Colors.grey[400]),
+            ),
+            Container(
+              child: Text(
+                'Advanced Stats',
+                style: TextStyle(
+                  color: Colors.grey[400],
+                  fontSize: 14,
+                ),
+              ),
+              padding: EdgeInsets.only(right: 20, left: 20, top: 20),
+              alignment: Alignment.center,
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text(
+                  '49',
+                  style: TextStyle(
+                      color: Colors.green,
+                      fontSize: 40,
+                      fontWeight: FontWeight.w700),
+                ),
+                Text(
+                  'kr',
+                  style: TextStyle(
+                      color: Colors.green,
+                      fontSize: 36,
+                      fontWeight: FontWeight.w600),
+                ),
+              ],
+            ),
+            Container(
+              margin: EdgeInsets.all(0),
+              child: Text(
+                'Monthly',
+                style: TextStyle(
+                    color: Colors.black54,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w500),
+              ),
+            ),
+            SizedBox(height: 10,),
+            RaisedButton(
+              elevation: 2,
+              color: Colors.green[500],
+              animationDuration: Duration(seconds: 1),
+              child: Container(
+                padding:
+                    EdgeInsets.only(left: 20, right: 20, top: 10, bottom: 10),
+                child: Text(
+                  'Subscribe',
+                  style: TextStyle(
+                    fontSize: 18,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              onPressed: () {}, // Define function later
+            ),
+          ],
         ),
-        // ListView.builder(
-        //   itemBuilder: _buildListItem,
-        //   itemCount: light.length,
-        // ),
-      ],
-    ),
-);
-
-// Widget _buildListItem(BuildContext context, int index) {
-//   return Row(
-//     children: <Widget>[
-//       Text(light[index],
-//           style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600))
-//     ],
-//   );
-// }
+      ),
+    );
+  }
+}

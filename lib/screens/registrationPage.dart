@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import '../views/appBar.dart';
 import '../views/loginPopup.dart';
-// import '../views/registration_card.dart';
+import '../views/registration_card.dart';
 
 class Registration extends StatefulWidget {
   @override
@@ -112,19 +112,19 @@ class _RegistrationState extends State<Registration> {
     shrinkWrap: true,
     children: <Widget>[
       SizedBox(
-        height: 10,
+        height: 20,
       ),
       fieldSetter('Store Name', false),
       SizedBox(
-        height: 10,
+        height: 20,
       ),
       fieldSetter('Address', false),
       SizedBox(
-        height: 10,
+        height: 20,
       ),
       fieldSetter('Password', true),
       SizedBox(
-        height: 10,
+        height: 50,
       ),
       Container(
         child: RaisedButton(
@@ -132,48 +132,30 @@ class _RegistrationState extends State<Registration> {
           color: Colors.green,
           animationDuration: Duration(seconds: 1),
           child: Container(
-              padding:
-                  EdgeInsets.only(left: 120, right: 120, top: 10, bottom: 10),
-              child: Text(
-                'Log in',
-                style: TextStyle(
-                  fontSize: 18,
-                  color: Colors.white,
-                ),
-              )),
+            padding:
+                EdgeInsets.only(left: 120, right: 120, top: 10, bottom: 10),
+            child: Text(
+              'Log in',
+              style: TextStyle(
+                fontSize: 18,
+                color: Colors.white,
+              ),
+            ),
+          ),
           onPressed: () {}, // Define function later
         ),
       )
     ],
   );
 
-  var carrousel = ListView(
-    shrinkWrap: true,
-    children: <Widget>[
-    SizedBox(height: 20,),
-    Container(
-      height: 200,
-      child:  Text("We the best", style: TextStyle(fontSize: 12),))
-  ],
-    
-   
-    // child: StatefulBuilder(
-    //   builder: (context, StateSetter setState) => CarouselSlider(
-    //     height: 250,
-    //     items: <Widget>[
-    //       card,
-    //   ],
-    //   )
-    // ),
-  );
 
- Widget sort(){
-   if(_isTitle){
-     return listView;
-   }
-   else if(_isPayment){
-     return carrousel;
-   }
-   else return null;
- }
+
+  Widget sort() {
+    if (_isTitle) {
+      return listView;
+    } else if (_isPayment) {
+      return RegistrationCard();
+    } else
+      return null;
+  }
 }
