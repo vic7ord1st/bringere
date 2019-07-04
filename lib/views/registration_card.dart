@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
 class RegistrationCard extends StatelessWidget {
+  final header;
+  final price;
+
+  RegistrationCard(this.header, this.price);
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -11,7 +15,7 @@ class RegistrationCard extends StatelessWidget {
             Container(
               alignment: Alignment.center,
               child: Text(
-                'LIGHT',
+                header,
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 18,
@@ -70,7 +74,7 @@ class RegistrationCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Text(
-                  '49',
+                  price,
                   style: TextStyle(
                       color: Colors.green,
                       fontSize: 40,

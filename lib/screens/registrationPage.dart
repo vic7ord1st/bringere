@@ -154,7 +154,7 @@ class _RegistrationState extends State<Registration> {
     if (_isTitle) {
       return listView;
     } else if (_isPayment) {
-      return RegistrationCard();
+      return RegistrationCard('LIGHT', '49');
     } else
       return null;
   }
