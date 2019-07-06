@@ -1,4 +1,4 @@
-// import 'package:carousel_slider/carousel_slider.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import '../views/appBar.dart';
 import '../views/loginPopup.dart';
@@ -10,7 +10,7 @@ class Registration extends StatefulWidget {
 }
 
 class _RegistrationState extends State<Registration> {
-  bool _isTitle = false;
+  bool _isTitle = true;
   bool _isVideocam = false;
   bool _isDashBoard = false;
   bool _isPayment = false;
@@ -154,7 +154,28 @@ class _RegistrationState extends State<Registration> {
     if (_isTitle) {
       return listView;
     } else if (_isPayment) {
-      return RegistrationCard('LIGHT', '49');
+      return   Container(
+        margin: EdgeInsets.only(bottom: 40),
+        alignment: Alignment.topLeft,
+      child: StatefulBuilder(
+       builder: (ctx, StateSetter setState) => 
+          CarouselSlider(
+            //enlargeCenterPage: true,
+            height: 550,
+            items: <Widget>[
+              RegistrationCard('Light', '49'),
+              RegistrationCard('Pro', '100')
+            ],
+            autoPlay: false,
+            enableInfiniteScroll: false,
+            onPageChanged: (index) {
+          setState(() {
+            }
+          );
+        },
+       )
+      )
+    );
     } else
       return null;
   }

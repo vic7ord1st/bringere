@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../drawer.dart';
+import './drawer.dart';
 
 AppBar appBar(String title) {
   return AppBar(
