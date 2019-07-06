@@ -99,7 +99,7 @@ class RegistrationCard extends StatelessWidget {
                     fontWeight: FontWeight.w500),
               ),
             ),
-            SizedBox(height: 10,),
+            SizedBox(height: 20,),
             RaisedButton(
               elevation: 2,
               color: Colors.green[500],

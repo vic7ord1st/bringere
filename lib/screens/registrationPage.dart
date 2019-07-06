@@ -160,8 +160,8 @@ class _RegistrationState extends State<Registration> {
       child: StatefulBuilder(
        builder: (ctx, StateSetter setState) => 
           CarouselSlider(
-            //enlargeCenterPage: true,
-            height: 550,
+            viewportFraction: 0.80,
+            height: 500,
             items: <Widget>[
               RegistrationCard('Light', '49'),
               RegistrationCard('Pro', '100')
